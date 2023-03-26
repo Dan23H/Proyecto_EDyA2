@@ -1,18 +1,16 @@
-import './App.css';
-import { Login, SignIn, Mensajes } from './pages';
-import { Notificaciones, Principal, Buscador} from './componentes';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { Login, SignIn, Home } from "./pages";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <Login />
-      <SignIn />
-      <Mensajes />
-      <Notificaciones />
-      <Principal />
-      <Buscador />
-    </>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/register" element={<SignIn />} />
+      <Route path="/home" element={<Home />} />
+    </Routes>
   );
-}
+};
 
 export default App;
+

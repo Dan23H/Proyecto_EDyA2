@@ -1,5 +1,5 @@
 // Archivo barril
-export * from './CompLogin'
+export {ComponenteInput} from './ComponenteInput'
 export * from './CompSignIn'
 export * from './FormatoMensaje'
 export * from './Buscador'
