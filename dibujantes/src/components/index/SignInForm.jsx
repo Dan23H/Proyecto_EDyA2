@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styles from "./Logeo.module.css";
 
-export const SignInForm = () => {
+export const SignInForm = ({ onBack }) => {
     const [usuario, setUsuario] = useState('')
     const [correo, setCorreo] = useState('')
     const [contraseña, setContraseña] = useState('')
@@ -60,6 +60,7 @@ export const SignInForm = () => {
                 </div>
                 <div>
                     <button className={styles.signInButton} onClick={() => mostrarResultados()}>Sign In</button>
+                    <button className={styles.signInButton} onClick={onBack}>Volver</button>
                 </div>
             </div>
         </>

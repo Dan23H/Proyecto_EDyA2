@@ -9,10 +9,6 @@ export const Mensajes = () => {
                 </thead>
                 <tbody>
                     <FormatoMensaje />
-                    <FormatoMensaje />
-                    <FormatoMensaje />
-                    <FormatoMensaje />
-                    <FormatoMensaje />
                 </tbody>
             </table>
         </>
