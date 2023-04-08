@@ -35,17 +35,17 @@ export const Navbar = ({ searchBar, current, item1, item2, item3, item4 }) => {
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
+              <li className="nav-item" title={item1}>
                 <Link className={fixCSS(item1, current)} to={fix(item1)}>
                   {item1}
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item" title={item2}>
                 <Link className={fixCSS(item2, current)} to={fix(item2)}>
                   {item2}
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item" title={item3}>
                 <Link className={fixCSS(item3, current)} to={fix(item3)}>
                   {item3}
                 </Link>
@@ -56,7 +56,7 @@ export const Navbar = ({ searchBar, current, item1, item2, item3, item4 }) => {
                 ) :
                 (
                   <>
-                    <li className="nav-item">
+                    <li className="nav-item" title={item4}>
                       <Link className={fixCSS(item4, current)} to={fix(item4)}>
                         {item4}
                       </Link>

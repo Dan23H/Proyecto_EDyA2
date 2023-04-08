@@ -13,10 +13,11 @@ export const Home = () => {
                 item1="Subir Imagen"
                 item2="Mensajeria"
                 item3="Perfil"
-                item4=""
+                item4="Notificaciones"
             />
 
             <div className="spotter">
+                <hr />
                 <Album posts={postsPrueba1} category={'#Anime'} />
                 <Album posts={postsPrueba2} category={'#Futuristic'} />
             </div>
