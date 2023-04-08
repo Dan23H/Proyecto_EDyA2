@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+/*import { Route, Switch } from "react-router-dom";
 import { Login } from "./pages/Login";
 
 export const AppRoutes = () => {
@@ -7,4 +7,4 @@ export const AppRoutes = () => {
       <Route exact path="/login" component={Login} />
     </Switch>
   );
-};
+};*/
