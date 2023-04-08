@@ -14,13 +14,11 @@ export const LoginForm = () => {
         setContraseña(evt.target.value)
     }
 
-    const pruebaDeTomaDeDatos = () => {
-        console.log('Tu usuario es: ' + usuario + ' y tu contraseña es: ' + contraseña)
-    }
 
     return (
         <>
-            <div className={styles.loginFormContainer}>
+        <body>
+        <div className={styles.loginFormContainer}>
                 <div className={styles.formGroup}>
                     <label className={styles.label}>Usuario: </label>
                     <input
@@ -55,6 +53,8 @@ export const LoginForm = () => {
                     </Link>
                 </div>
             </div>
+        </body>
+            
         </>
     )
 }
