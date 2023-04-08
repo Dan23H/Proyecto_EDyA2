@@ -14,6 +14,7 @@ const fixCSS = (item, current) => {
 };
 
 export const Navbar = ({ searchBar, current, item1, item2, item3, item4 }) => {
+
   return (
     <>
       <div className="topboard">
@@ -49,11 +50,21 @@ export const Navbar = ({ searchBar, current, item1, item2, item3, item4 }) => {
                   {item3}
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className={fixCSS(item4, current)} to={fix(item4)}>
-                  {item4}
-                </Link>
-              </li>
+              {(item4 === null || item4 === "") ?
+                (
+                  <></>
+                ) :
+                (
+                  <>
+                    <li className="nav-item">
+                      <Link className={fixCSS(item4, current)} to={fix(item4)}>
+                        {item4}
+                      </Link>
+                    </li>
+                  </>
+                )
+              }
+
             </ul>
             {searchBar === true ? (
               <>

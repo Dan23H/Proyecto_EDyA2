@@ -183,7 +183,7 @@ export const SubirImagen = () => {
         item1="Subir Imagen"
         item2="Mensajeria"
         item3="Perfil"
-        item4="Tienda"
+        item4=""
       />
     </body>
   );

@@ -15,50 +15,17 @@ export const Home = () => {
     {
       msg: "Hola Mundo",
       img: "https://www.uao.edu.co/wp-content/uploads/2020/05/Vive-la-UAO-745x410.jpg",
+      category: "#Hola",
     },
     {
       msg: "Castro",
       img: "https://www.uao.edu.co/wp-content/uploads/2020/05/UAO-logo-acreditacion.png",
+      category: "#Hola",
     },
     {
       msg: "A",
       img: "https://conceptodefinicion.de/wp-content/uploads/2019/06/letras-1.jpg",
-    },
-    {
-      msg: "Hola Mundo",
-      img: "https://www.uao.edu.co/wp-content/uploads/2020/05/Vive-la-UAO-745x410.jpg",
-    },
-    {
-      msg: "Castro",
-      img: "https://www.uao.edu.co/wp-content/uploads/2020/05/UAO-logo-acreditacion.png",
-    },
-    {
-      msg: "A",
-      img: "https://conceptodefinicion.de/wp-content/uploads/2019/06/letras-1.jpg",
-    },
-    {
-      msg: "Hola Mundo",
-      img: "https://www.uao.edu.co/wp-content/uploads/2020/05/Vive-la-UAO-745x410.jpg",
-    },
-    {
-      msg: "Castro",
-      img: "https://www.uao.edu.co/wp-content/uploads/2020/05/UAO-logo-acreditacion.png",
-    },
-    {
-      msg: "A",
-      img: "https://conceptodefinicion.de/wp-content/uploads/2019/06/letras-1.jpg",
-    },
-    {
-      msg: "Hola Mundo",
-      img: "https://www.uao.edu.co/wp-content/uploads/2020/05/Vive-la-UAO-745x410.jpg",
-    },
-    {
-      msg: "Castro",
-      img: "https://www.uao.edu.co/wp-content/uploads/2020/05/UAO-logo-acreditacion.png",
-    },
-    {
-      msg: "A",
-      img: "https://conceptodefinicion.de/wp-content/uploads/2019/06/letras-1.jpg",
+      category: "#Hola",
     },
   ];
 
@@ -70,7 +37,7 @@ export const Home = () => {
         item1="Subir Imagen"
         item2="Mensajeria"
         item3="Perfil"
-        item4="Tienda"
+        item4=""
       />
       <div className="banner"></div>
       <div>
