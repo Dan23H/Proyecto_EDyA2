@@ -1,0 +1,11 @@
+.formato-notificacion-container {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: #d3bbdc;
+    border: 2px solid #6b3f87;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    height: 30vh;
+    width: 90vw;
+  }

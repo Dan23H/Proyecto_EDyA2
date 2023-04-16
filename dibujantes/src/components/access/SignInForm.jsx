@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import styles from "./Logeo.module.css";
 import "../../bootstrap-css/bootstrap.min.css"
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../../7T.png";
 
 export const SignInForm = () => {
     const [usuario, setUsuario] = useState('')
@@ -46,7 +47,7 @@ export const SignInForm = () => {
                 correo: correo,
                 contraseña: contraseña
             })
-            
+
         } else {
             alert('Las contraseñas no son la misma')
         }
@@ -56,6 +57,7 @@ export const SignInForm = () => {
     return (
         <>
             <div className={styles.loginFormContainer}>
+                <img src={logo} alt="logo" className={styles.logo} />
                 <form onSubmit={(evt) => handleRegistro(evt)}>
                     <input
                         className={styles.input}
@@ -65,7 +67,6 @@ export const SignInForm = () => {
                         value={usuario}
                         required
                     />
-
                     <input
                         className={styles.input}
                         type="text"
@@ -74,7 +75,6 @@ export const SignInForm = () => {
                         value={correo}
                         required
                     />
-
                     <input
                         className={styles.input}
                         type="password"
@@ -83,7 +83,6 @@ export const SignInForm = () => {
                         value={contraseña}
                         required
                     />
-
                     <input
                         className={styles.input}
                         type="password"
@@ -99,7 +98,6 @@ export const SignInForm = () => {
                         </Link>
                     </div>
                 </form>
-
             </div>
         </>
     )
