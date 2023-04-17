@@ -5,6 +5,7 @@ import { SubirImagen } from "./pages/SubirImagen";
 import { Notification } from "./pages/Notification";
 
 const App = () => {
+
   return (
     <Routes>
       <Route path="/" element={<Login />} />
@@ -13,7 +14,6 @@ const App = () => {
       <Route path="/mensajeria" element={<Mensajes />} />
       <Route path="/subir-imagen" element={<SubirImagen />} />
       <Route path="/notificaciones" element={<Notification/>}/>
-      
     </Routes>
   );
 };

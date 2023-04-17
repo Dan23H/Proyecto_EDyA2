@@ -10,11 +10,11 @@ export const SignInForm = () => {
     const [contraseña, setContraseña] = useState('')
     const [cContraseña, setCContraseña] = useState('')
     const Nav = useNavigate()
-    const [data, setData] = useState({
-        usuario: "",
-        correo: "",
-        contraseña: ""
-    })
+    const [usuarios, setUsuarios] = useState([]);
+
+    useEffect(() => {
+        console.log(JSON.stringify(usuarios));
+      }, [usuarios]);
 
     const tomarUsuario = (evt) => {
         setUsuario(evt.target.value)
@@ -32,28 +32,23 @@ export const SignInForm = () => {
         setCContraseña(evt.target.value)
     }
 
-    useEffect(() => {
-        if (data.usuario && data.correo && data.contraseña) {
-            console.log(data)
-            Nav("/");
-        }
-    }, [data, Nav]);
+    
 
     const handleRegistro = (e) => {
         e.preventDefault()
         if (contraseña === cContraseña) {
-            setData({
+            const nuevoUsuario = {
                 usuario: usuario,
                 correo: correo,
                 contraseña: contraseña
-            })
-
+            }
+            setUsuarios(usuarios.concat(nuevoUsuario))
+            //Nav("/");
         } else {
             alert('Las contraseñas no son la misma')
         }
-
     }
-
+      
     return (
         <>
             <div className={styles.loginFormContainer}>
@@ -92,7 +87,7 @@ export const SignInForm = () => {
                         required
                     />
                     <div>
-                        <button className={styles.signInButton} type="submit">Registrarse</button>
+                        <button className={styles.signInButton} type="submit" onClick={(e) => handleRegistro(e)}>Registrarse</button>
                         <Link to="/">
                             <button className={styles.signInButton} type="button">Volver</button>
                         </Link>

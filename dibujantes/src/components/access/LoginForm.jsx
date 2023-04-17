@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import logo from "../../7T.png";
 
 export const LoginForm = () => {
-    const [usuario, setUsuario] = useState(0)
-    const [contraseña, setContraseña] = useState(0)
+    const [usuario, setUsuario] = useState('');
+    const [contraseña, setContraseña] = useState('');
 
     const tomarUsuario = (evt) => {
         setUsuario(evt.target.value)
@@ -15,14 +15,12 @@ export const LoginForm = () => {
         setContraseña(evt.target.value)
     }
 
-
     return (
         <>
             <body>
                 <div className={styles.loginFormContainer}>
                     <div className={styles.formGroup}>
                         <img src={logo} alt="logo" className={styles.logo} />
-                        {/*<label className={styles.label}>Usuario: </label>*/}
                         <input
                             className={styles.input}
                             type="text"
@@ -31,7 +29,6 @@ export const LoginForm = () => {
                         />
                     </div>
                     <div className={styles.formGroup}>
-                        {/*<label className={styles.label}>Contraseña: </label>*/}
                         <input className={styles.input}
                             type="password"
                             placeholder="Ingrese su contraseña"
