@@ -22,7 +22,7 @@ export const Mensajes = () => {
         item1="Subir Imagen"
         item2="Mensajeria"
         item3="Perfil"
-        item4=""
+        item4="Notificaciones"
       />
       <div className={styles["botones-container"]}>
         <button className={styles["boton-mensaje"]} onClick={handleMostrarMensajes}>Ver mensajes</button>

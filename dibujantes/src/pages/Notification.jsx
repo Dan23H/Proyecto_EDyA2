@@ -7,7 +7,7 @@ export const Notification = () => {
         <>
             <Navbar
                 searchBar={true}
-                current="interfaz-usuario"
+                current="notificaciones"
                 item1="Subir Imagen"
                 item2="Mensajeria"
                 item3="Perfil"
