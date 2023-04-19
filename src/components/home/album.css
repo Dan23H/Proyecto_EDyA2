@@ -1,0 +1,100 @@
+:root {
+  --jumbotron-padding-y: 3rem;
+}
+
+.spotter {
+  margin-top: 3%;
+}
+
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: 0.25rem;
+}
+
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+.tituloB {
+  color: #fff;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  color: rgb(0, 0, 0);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 24px;
+  opacity: 0.1;
+  background-color: #000;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  color: rgb(0, 128, 0);
+  opacity: 1;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: #000;
+  opacity: 0.5;
+  border-radius: 25px;
+}
+
+.carousel-title {
+  margin-top: 10px;
+  top: 0;
+  left: 0;
+  padding: 25px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(136, 45, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.carousel-body {
+  top: 0;
+  left: 0;
+  padding: 25px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(151, 71, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: auto;
+}
