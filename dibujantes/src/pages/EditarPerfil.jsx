@@ -1,11 +1,14 @@
+import { useLocation } from "react-router-dom";
 import "../components/subirImagen/subirImagen.css";
 import { useState } from "react";
 
 export const EditarPerfil = ({ perfilImg, portadaImg }) => {
+  let {state}=useLocation();
   const [images, setImages] = useState(false);
   const [imagesPortada, setImagesPortada] = useState(false);
-  const [nuevoNombre, setNuevoNombre] = useState("");
-  const [nuevoPais, setNuevoPais] = useState(""); 
+  const [nuevoNombre, setNuevoNombre] = useState(state.nombre);
+  const [nuevoPais, setNuevoPais] = useState(state.pais); 
+  
 
   const handleImagen = (e) => {
     const newImages = Array.from(e.target.files)
