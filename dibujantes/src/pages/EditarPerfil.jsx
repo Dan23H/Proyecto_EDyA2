@@ -80,6 +80,7 @@ export const EditarPerfil = ({ perfilImg, portadaImg }) => {
             <section className="active">
               <input
                 type="text"
+                value={nuevoNombre}
                 placeholder="Cambiar nombre"
                 id="nombre"
                 onChange={(event) => handleNombre(event)}
@@ -90,6 +91,7 @@ export const EditarPerfil = ({ perfilImg, portadaImg }) => {
                 type="text"
                 placeholder="Cambiar país"
                 id="pais"
+                value={nuevoPais}
                 maxLength={500}
                 onChange={(event) => handlePais(event)}
               />
@@ -135,14 +137,14 @@ export const EditarPerfil = ({ perfilImg, portadaImg }) => {
                         {(portadaImg = image.url)}
                       </h5>
                       <img
-                        src={portadaImg}
+                        src={state.portadaImg}
                         alt="ejemplo portada"
                         className="card-img-top"
                         style={{ height: "150px", objectFit: "cover" }}
                       />
 
                       <img
-                        src={perfilImg}
+                        src={state.perfilImg}
                         alt="ejemplo perfil"
                         height="120"
                         width="120"
@@ -160,14 +162,14 @@ export const EditarPerfil = ({ perfilImg, portadaImg }) => {
                 <>
                   <div className="card mb-4 box-shadow">
                     <img
-                      src={portadaImg}
+                      src={state.portadaImg}
                       alt="ejemplo portada"
                       className="card-img-top"
                       style={{ height: "150px", objectFit: "cover" }}
                     />
 
                     <img
-                      src={perfilImg}
+                      src={state.perfilImg}
                       alt="ejemplo perfil"
                       height="120"
                       width="120"
