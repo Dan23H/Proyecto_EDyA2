@@ -4,7 +4,6 @@ import {postsPrueba1, postsPrueba2} from "../components/fake-data/album-data"
 
 export const Home = () => {
     
-
     return (
         <>
             <Navbar

@@ -1,0 +1,31 @@
+/* Estilo para las imágenes de "Mis trabajos" */
+table {
+    width: 100%;
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  table img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Estilo para la portada */
+  .border-primary{
+    border-color: #1877f2;
+  }
+
+  .img-portrait{
+    
+    object-fit: cover;
+  }
+  
+  /* Estilo para la foto de perfil */
+  .rounded-circle {
+    border-color: #1877f2;
+    object-fit: cover;
+  }

@@ -98,3 +98,58 @@ footer p {
   align-items: center;
   font-size: auto;
 }
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 150px;
+}
+
+.logo-hover {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 1s ease;
+}
+
+.logo-container:hover .logo-hover {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hover-text {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.logo{
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+}
+
+.logo-text {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-container:hover .logo-text {
+  transform: translateX(0);
+}

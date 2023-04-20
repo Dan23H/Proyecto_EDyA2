@@ -1,5 +1,9 @@
 import "../../bootstrap-css/bootstrap.min.css";
 import { Link } from "react-router-dom";
+import logo from "../../7T.png";
+import subirImagen from "./subirImagen.png";
+import mensajeria from "./mensajeria.png";
+import notifications from "./notifications.png"
 
 const fix = (item) => {
   const res = "/" + item.toLowerCase().split(" ").join("-");
@@ -19,8 +23,13 @@ export const Navbar = ({ searchBar, current, item1, item2, item3, item4 }) => {
     <>
       <div className="topboard">
         <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <Link className="navbar-brand" to="/home">
-            Inicio (Logo)
+          <Link to="/home">
+            <div className="logo-container">
+              <img src={logo} alt="Logo" className="logo" />
+              <div className="logo-hover">
+                <span className="hover-text">Ir al inicio</span>
+              </div>
+            </div>
           </Link>
           <button
             className="navbar-toggler"
@@ -37,34 +46,24 @@ export const Navbar = ({ searchBar, current, item1, item2, item3, item4 }) => {
             <ul className="navbar-nav mr-auto">
               <li className="nav-item" title={item1}>
                 <Link className={fixCSS(item1, current)} to={fix(item1)}>
-                  {item1}
+                  <img className="logo" src={subirImagen} alt={item1} />
                 </Link>
               </li>
               <li className="nav-item" title={item2}>
                 <Link className={fixCSS(item2, current)} to={fix(item2)}>
-                  {item2}
+                  <img className="logo" src={mensajeria} alt={item2} />
                 </Link>
               </li>
               <li className="nav-item" title={item3}>
-                <Link className={fixCSS(item3, current)} to={{pathname: '/perfil'}}>
-                  {item3}
+                <Link className={fixCSS(item3, current)} to={{ pathname: '/perfil' }}>
+                  <img className="logo" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt={item3} />
                 </Link>
               </li>
-              {(item4 === null || item4 === "") ?
-                (
-                  <></>
-                ) :
-                (
-                  <>
-                    <li className="nav-item" title={item4}>
-                      <Link className={fixCSS(item4, current)} to={fix(item4)}>
-                        {item4}
-                      </Link>
-                    </li>
-                  </>
-                )
-              }
-
+              <li className="nav-item" title={item4}>
+                <Link className={fixCSS(item4, current)} to={fix(item4)}>
+                  <img className="logo" src={notifications} alt={item4} />
+                </Link>
+              </li>
             </ul>
             {searchBar === true ? (
               <>

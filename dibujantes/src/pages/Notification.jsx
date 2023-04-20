@@ -6,7 +6,7 @@ export const Notification = () => {
     return (
         <>
             <Navbar
-                searchBar={true}
+                searchBar={false}
                 current="notificaciones"
                 item1="Subir Imagen"
                 item2="Mensajeria"
