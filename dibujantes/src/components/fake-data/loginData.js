@@ -1,0 +1,1 @@
+export const loginData = [{usuario: "Maverick7" , correo: "Maverick7@gmail.com", contraseña:"123"}]

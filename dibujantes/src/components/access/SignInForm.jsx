@@ -31,9 +31,7 @@ export const SignInForm = () => {
     const tomarCContraseña = (evt) => {
         setCContraseña(evt.target.value)
     }
-
     
-
     const handleRegistro = (e) => {
         e.preventDefault()
         if (contraseña === cContraseña) {
