@@ -42,6 +42,7 @@ export const SubirImagen = () => {
         setImages([])
         setCategory('')
         setDescription('')
+        navigate("/home")
     }
 
     const handleSave = () => {

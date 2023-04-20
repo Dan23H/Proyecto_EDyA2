@@ -49,7 +49,13 @@ export const Perfil = ({
               Home 🏠
             </button>
           </Link>
-
+          <Link to="/">
+            <button
+              class="btn btn-info position-relative rounded-pill"
+            >
+              Cerrar sesión
+            </button>
+          </Link>
 
           <img
             src={perfilImg}
@@ -72,6 +78,9 @@ export const Perfil = ({
           </label>
           <label class="btn btn-outline-primary" for="btnradio2">
             Favoritos
+          </label>
+          <label class="btn btn-outline-primary" for="btnradio3">
+            +
           </label>
         </div>
         <table>

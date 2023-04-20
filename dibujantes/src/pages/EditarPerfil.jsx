@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "../components/subirImagen/subirImagen.css";
 import { useState } from "react";
 
@@ -8,6 +8,7 @@ export const EditarPerfil = ({ perfilImg, portadaImg }) => {
   const [imagesPortada, setImagesPortada] = useState(false);
   const [nuevoNombre, setNuevoNombre] = useState(state.nombre);
   const [nuevoPais, setNuevoPais] = useState(state.pais); 
+  const nav = useNavigate()
   
 
   const handleImagen = (e) => {
@@ -58,6 +59,7 @@ export const EditarPerfil = ({ perfilImg, portadaImg }) => {
     setImages([]);
     setNuevoNombre("");
     setNuevoPais("");
+    nav("/perfil")
   };
 
   const handleSubmit = () => {
@@ -66,6 +68,7 @@ export const EditarPerfil = ({ perfilImg, portadaImg }) => {
     setImages([]);
     setNuevoNombre("");
     setNuevoPais("");
+    nav("/perfil")
   };
 
   return (
@@ -187,7 +190,7 @@ export const EditarPerfil = ({ perfilImg, portadaImg }) => {
             <footer>
               <ul>
                 <li>
-                  <button className="btn btn-primary" type="submit">
+                  <button className="btn btn-primary" type="button" onClick={() => handleSubmit()}>
                     Guardar perfil
                   </button>
                 </li>
@@ -197,7 +200,7 @@ export const EditarPerfil = ({ perfilImg, portadaImg }) => {
                     type="button"
                     onClick={(event) => handleReset(event)}
                   >
-                    Cancelar
+                    Cancelar y volver
                   </button>
                 </li>
               </ul>
