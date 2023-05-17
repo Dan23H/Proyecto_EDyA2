@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import styles from "./Logeo.module.css";
 import "../../bootstrap-css/bootstrap.min.css"
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../7T.png";
+import logo from "../../assets/7T.png";
 
 export const SignInForm = () => {
     const [usuario, setUsuario] = useState('')

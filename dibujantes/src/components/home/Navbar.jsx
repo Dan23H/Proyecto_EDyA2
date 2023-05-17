@@ -1,6 +1,6 @@
 import "../../bootstrap-css/bootstrap.min.css";
 import { Link } from "react-router-dom";
-import logo from "../../7T.png";
+import logo from "../../assets/7T.png";
 import subirImagen from "./subirImagen.png";
 import mensajeria from "./mensajeria.png";
 import notifications from "./notifications.png"

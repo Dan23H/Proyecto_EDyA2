@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styles from "./Logeo.module.css";
 import { Link } from "react-router-dom";
-import logo from "../../7T.png";
+import logo from "../../assets/7T.png";
 
 export const LoginForm = () => {
     const [usuario, setUsuario] = useState('');
