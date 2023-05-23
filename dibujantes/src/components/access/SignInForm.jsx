@@ -5,7 +5,7 @@ import styles from "./Logeo.module.css";
 import "../../bootstrap-css/bootstrap.min.css";
 
 export const SignInForm = () => {
-  const {handleChange, handleSubmit} = useSignInForm();
+  const {handleChange, handleSubmit, error} = useSignInForm();
 
   return (
     <>
@@ -28,6 +28,9 @@ export const SignInForm = () => {
             onChange={handleChange}
             required
           />
+          <div >
+            { error && <span className="colorful">{error}</span>}
+          </div>
           <div>
             <button className={styles.signInButton} type="submit">
               Registrarse

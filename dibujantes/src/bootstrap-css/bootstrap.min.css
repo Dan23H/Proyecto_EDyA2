@@ -9943,4 +9943,13 @@ a.text-dark:hover {
     }
 }
 
+.colorful {
+    background-color: #dc3545;
+    padding: 50%;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    align-tracks: center;
+}
+
 /*# sourceMappingURL=bootstrap.min.css.map */

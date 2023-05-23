@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "./useAuth";
+import { useNavigate } from "react-router-dom";
 
 export function useSignInForm() {
   const [usuario, setUsuario] = useState({
@@ -7,19 +8,28 @@ export function useSignInForm() {
     password: ""
   });
   const { registro } = useAuth()
-  const handleChange = ({target: {name, value}}) => {
-    setUsuario({...usuario, [name]:value})
+  const nav = useNavigate()
+  const [error, setError] = useState()
+  const handleChange = ({ target: { name, value } }) => {
+    setUsuario({ ...usuario, [name]: value })
     console.log(usuario)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    registro(usuario.email, usuario.password)
+    try {
+      await registro(usuario.email, usuario.password)
+      nav("/")
+    } catch (error) {
+      setError(error.message);
+    }
+
   };
 
   return {
     handleChange,
-    handleSubmit
+    handleSubmit,
+    error
   };
 }
 
