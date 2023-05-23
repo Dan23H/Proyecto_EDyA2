@@ -5,51 +5,44 @@ import { Link } from 'react-router-dom';
 import { useLoginForm } from '../../hooks';
 
 export const LoginForm = () => {
-  const { usuario, contraseña, tomarUsuario, tomarContraseña, handleLogin, credencialesInvalidas } = useLoginForm();
-    
+  const {handleChange, handleSubmit, error} = useLoginForm();
+
   return (
     <>
-      <body>
-        <div className={styles.loginFormContainer}>
-          <div className={styles.formGroup}>
-            <img src={logo} alt='logo' className={styles.logo} />
-            <input
-              className={styles.input}
-              type='text'
-              placeholder='Ingrese su nombre de usuario'
-              onChange={(evt) => tomarUsuario(evt)}
-            />
+      <div className={styles.loginFormContainer}>
+        <img src={logo} alt="logo" className={styles.logo} />
+        <form onSubmit={handleSubmit}>
+          <input
+            className={styles.input}
+            type="text"
+            name="email"
+            placeholder="Correo electronico"
+            onChange={handleChange}
+            required
+          />
+          <input
+            className={styles.input}
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            onChange={handleChange}
+            required
+          />
+          <div >
+            { error && <span className="colorful">{error}</span>}
           </div>
-          <div className={styles.formGroup}>
-            <input
-              className={styles.input}
-              type='password'
-              placeholder='Ingrese su contraseña'
-              onChange={(evt) => tomarContraseña(evt)}
-            />
-          </div>
-          {credencialesInvalidas && (
-            <p className={styles.errorMessage}>
-              Credenciales inválidas, por favor intente de nuevo.
-            </p>
-          )}
-          <div className={styles.buttonsContainer}>
-            <button
-              className={styles.logInButton}
-              type='button'
-              onClick={(e) => handleLogin(e)}
-            >
-              Acceder
+          <div>
+            <button className={styles.signInButton} type="submit">
+              Iniciar Sesión
             </button>
-            <Link to='/register'>
-              <button className={styles.signInButton} type='button'>
-                Registro
+            <Link to="/register">
+              <button className={styles.signInButton} type="button">
+                Registrarse
               </button>
             </Link>
-
           </div>
-        </div>
-      </body>
+        </form>
+      </div>
     </>
   );
 };
