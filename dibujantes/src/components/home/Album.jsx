@@ -3,8 +3,12 @@ import "../../bootstrap-css/bootstrap.min.css";
 import { Post } from "./Post";
 import { Carousel, CarouselItem } from 'react-bootstrap';
 
-export const Album = ({ posts, category }) => {
-  const post5 = posts.reduce((resultArray, item, index) => {
+export const Album = ({ images, category }) => {
+  if (!images || images.length === 0) {
+    return <div>No se encontraron imágenes.</div>;
+  }
+
+  const post5 = images.reduce((resultArray, item, index) => {
     const chunkIndex = Math.floor(index / 4);
 
     if (!resultArray[chunkIndex]) {
@@ -20,6 +24,8 @@ export const Album = ({ posts, category }) => {
     height: '400px',
     overflow: 'hidden'
   };
+  //console.log(images);
+
   return (
     <div className="container-fluid">
       <span className="carousel-title">{category}</span>
@@ -31,8 +37,9 @@ export const Album = ({ posts, category }) => {
                 {group.map((post, j) => (
                   <div className="col-md-3" key={j}>
                     <Post
-                      img={post.img}
-                      msg={post.msg}
+                      contentType={post.contentType}
+                      data={post.data}
+                      msg={post.descripcion}
                     />
                   </div>
                 ))}

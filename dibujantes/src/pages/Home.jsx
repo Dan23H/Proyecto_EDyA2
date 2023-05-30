@@ -5,19 +5,27 @@ import {postsPrueba1, postsPrueba2} from "../components/fake-data/album-data"
 
 
 export const Home = () => {
-    /*const [images, setImages] = useState([]);
-    const imagenId = "646d31d16196e66d3454b0bd"
+    const [images, setImages] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/verimagen/${imagenId}`)
-          .then((response) => response.json())
-          .then((data) => {
-            setImages(data.imagenes);
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-          });
-      }, []);*/
+      fetchImages();
+    }, []);
+  
+    const fetchImages = async () => {
+      try {
+        const response = await fetch("http://localhost:4000/verimagenes");
+        const data = await response.json();
+        const formattedImages = data.imagenes.map((imagen) => {
+          return {
+            contentType: imagen.contentType,
+            data: imagen.data,
+          };
+        });
+        setImages(formattedImages);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
 
     return (
         <>
@@ -32,8 +40,8 @@ export const Home = () => {
 
             <div className="spotter">
                 <hr />
-                <Album posts={postsPrueba1} category={'#Anime'} />
-                <Album posts={postsPrueba1} category={'#Futuristic'} />
+                <Album images={images} category={'#Anime'} />
+                <Album images={images} category={'#Futuristic'} />
             </div>
         </>
     );
