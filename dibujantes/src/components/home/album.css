@@ -11,6 +11,7 @@
   padding-bottom: var(--jumbotron-padding-y);
   margin-bottom: 0;
   background-color: #fff;
+
 }
 
 @media (min-width: 768px) {
@@ -136,7 +137,7 @@ footer p {
   font-weight: bold;
 }
 
-.logo{
+.logo {
   z-index: 1;
   width: 50px;
   height: 50px;
@@ -152,4 +153,27 @@ footer p {
 
 .logo-container:hover .logo-text {
   transform: translateX(0);
+}
+
+.container-carousel {
+  margin-left: 0;
+  margin-right: 0;
+  width: 90vw;
+}
+
+.post-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.item-container>* {
+  margin: 5px;
 }

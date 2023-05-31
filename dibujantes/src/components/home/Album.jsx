@@ -7,44 +7,36 @@ export const Album = ({ images, category }) => {
   if (!images || images.length === 0) {
     return <div>No se encontraron imágenes.</div>;
   }
-
-  const post5 = images.reduce((resultArray, item, index) => {
-    const chunkIndex = Math.floor(index / 4);
-
-    if (!resultArray[chunkIndex]) {
-      resultArray[chunkIndex] = [];
+  const empaquetarListas = (arreglo, tamaño) => {
+    const resultado = [];
+    for (let i = 0; i < arreglo.length; i += tamaño) {
+      resultado.push(arreglo.slice(i, i + tamaño));
     }
+    return resultado;
+  }
 
-    resultArray[chunkIndex].push(item);
-
-    return resultArray;
-  }, []);
-
-  const style = {
-    height: '400px',
-    overflow: 'hidden'
-  };
-  //console.log(images);
-
+  const groupedImages = empaquetarListas(images, 3);
   return (
-    <div className="container-fluid">
+    <div className="container-carousel">
       <span className="carousel-title">{category}</span>
       <div className="carousel-body">
-        <Carousel interval={null} style={style}>
-          {post5.map((group, i) => (
-            <CarouselItem key={i}>
-              <div className="row">
-                {group.map((post, j) => (
-                  <div className="col-md-3" key={j}>
+        <Carousel interval={null} style={{ height: '400px', overflow: 'hidden' }}>
+          {groupedImages.map((group, index) => (
+            <Carousel.Item key={index}>
+              <div className="item-container">
+                {group.map((objeto, subIndex) => (
+                  <div className="post-row">
                     <Post
-                      contentType={post.contentType}
-                      data={post.data}
-                      msg={post.descripcion}
+                      key={subIndex}
+                      id={objeto.id}
+                      contentType={objeto.imagen.contentType}
+                      data={objeto.imagen.data}
+                      msg={objeto.descripcion}
                     />
                   </div>
                 ))}
               </div>
-            </CarouselItem>
+            </Carousel.Item>
           ))}
         </Carousel>
       </div>
