@@ -12,7 +12,7 @@ export const Home = () => {
 
   const fetchImages = async () => {
     try {
-      const response = await fetch("https://drawers7tback.fly.dev/imagenes");
+      const response = await fetch("https://localhost:4000/imagenes");
       const data = await response.json();
       const formattedImages = data.imagenes.map((imagen) => {
         return {
